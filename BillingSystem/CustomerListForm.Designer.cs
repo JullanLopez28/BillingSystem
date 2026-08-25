@@ -170,7 +170,7 @@
             Margin = new Padding(5);
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System v1.0 – Login (K.S)";
+            Text = "Billing System v1.0 – Login (K.C.S)";
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
