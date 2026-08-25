@@ -126,7 +126,7 @@
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += this.btnDelete_Click;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnLogout
             // 
@@ -136,7 +136,7 @@
             btnLogout.TabIndex = 4;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += this.btnLogout_Click;
+            btnLogout.Click += btnLogout_Click;
             // 
             // txtSearch
             // 
@@ -167,10 +167,10 @@
             Controls.Add(dgvCustomers);
             Controls.Add(lblTitle);
             Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System - Customer List";
+            Text = "Billing System v1.0 – Login (K.C.S)";
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
