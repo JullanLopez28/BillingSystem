@@ -10,7 +10,7 @@ namespace BillingSystem
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize(); // Lopez
+            ApplicationConfiguration.Initialize(); Lopez, K.R.
             Application.Run(new LoginForm());
         }
     }
