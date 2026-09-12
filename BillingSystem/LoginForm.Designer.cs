@@ -81,7 +81,7 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(189, 27);
             txtPassword.TabIndex = 4;
-            txtPassword.TextChanged += this.txtPassword_TextChanged;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // btnLogin
             // 
@@ -105,7 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(377, 253);
+            ClientSize = new Size(398, 253);
             Controls.Add(btnCancel);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
@@ -117,8 +117,8 @@
             MaximizeBox = false;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Billing System - Login";
-            Load += this.LoginForm_Load;
+            Text = "Billing System v1.0 – Login (J.C.L.)";
+            Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
