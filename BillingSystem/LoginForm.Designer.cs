@@ -91,6 +91,7 @@
             btnLogin.TabIndex = 5;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnCancel
             // 
@@ -134,9 +135,6 @@
         private Button btnCancel;
 
         // Add this method to your LoginForm partial class
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            // You can leave this empty or add initialization code here if needed.
-        }
+        
     }
 }
