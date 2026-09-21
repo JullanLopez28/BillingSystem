@@ -30,17 +30,18 @@
         {
             lblTitle = new Label();
             dgvCustomers = new DataGridView();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            btnLogout = new Button();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
             CustomerID = new DataGridViewTextBoxColumn();
             FullName = new DataGridViewTextBoxColumn();
             Address = new DataGridViewTextBoxColumn();
             ContactNumber = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
             Balance = new DataGridViewTextBoxColumn();
-            btnAdd = new Button();
-            btnDelete = new Button();
-            btnLogout = new Button();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
+            Status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             SuspendLayout();
             // 
@@ -53,65 +54,26 @@
             lblTitle.Size = new Size(170, 32);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Customer List";
+            lblTitle.Click += lblTitle_Click;
             // 
             // dgvCustomers
             // 
             dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCustomers.BackgroundColor = SystemColors.ControlLightLight;
             dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomers.Columns.AddRange(new DataGridViewColumn[] { CustomerID, FullName, Address, ContactNumber, Email, Balance });
-            dgvCustomers.Location = new Point(111, 155);
+            dgvCustomers.Columns.AddRange(new DataGridViewColumn[] { CustomerID, FullName, Address, ContactNumber, Email, Balance, Status });
+            dgvCustomers.Location = new Point(64, 155);
             dgvCustomers.Name = "dgvCustomers";
             dgvCustomers.ReadOnly = true;
             dgvCustomers.RowHeadersWidth = 51;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomers.Size = new Size(799, 101);
+            dgvCustomers.Size = new Size(1315, 268);
             dgvCustomers.TabIndex = 1;
-            // 
-            // CustomerID
-            // 
-            CustomerID.HeaderText = "ID";
-            CustomerID.MinimumWidth = 6;
-            CustomerID.Name = "CustomerID";
-            CustomerID.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            FullName.HeaderText = "FullName";
-            FullName.MinimumWidth = 6;
-            FullName.Name = "FullName";
-            FullName.ReadOnly = true;
-            // 
-            // Address
-            // 
-            Address.HeaderText = "Address";
-            Address.MinimumWidth = 6;
-            Address.Name = "Address";
-            Address.ReadOnly = true;
-            // 
-            // ContactNumber
-            // 
-            ContactNumber.HeaderText = "Contact No.";
-            ContactNumber.MinimumWidth = 6;
-            ContactNumber.Name = "ContactNumber";
-            ContactNumber.ReadOnly = true;
-            // 
-            // Email
-            // 
-            Email.HeaderText = "Email";
-            Email.MinimumWidth = 6;
-            Email.Name = "Email";
-            Email.ReadOnly = true;
-            // 
-            // Balance
-            // 
-            Balance.HeaderText = "Balance";
-            Balance.MinimumWidth = 6;
-            Balance.Name = "Balance";
-            Balance.ReadOnly = true;
+            dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(142, 327);
+            btnAdd.Location = new Point(308, 461);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(239, 47);
             btnAdd.TabIndex = 2;
@@ -120,7 +82,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(467, 327);
+            btnDelete.Location = new Point(596, 461);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(157, 47);
             btnDelete.TabIndex = 3;
@@ -130,7 +92,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(709, 327);
+            btnLogout.Location = new Point(822, 461);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(159, 47);
             btnLogout.TabIndex = 4;
@@ -140,25 +102,84 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(277, 54);
+            txtSearch.Location = new Point(406, 60);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(503, 39);
+            txtSearch.Size = new Size(767, 39);
             txtSearch.TabIndex = 5;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(795, 54);
+            btnSearch.Location = new Point(1190, 56);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(131, 43);
             btnSearch.TabIndex = 6;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // CustomerID
+            // 
+            CustomerID.DataPropertyName = "CustomerID";
+            CustomerID.HeaderText = "ID";
+            CustomerID.MinimumWidth = 6;
+            CustomerID.Name = "CustomerID";
+            CustomerID.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            FullName.DataPropertyName = "FullName";
+            FullName.HeaderText = "Full Name";
+            FullName.MinimumWidth = 6;
+            FullName.Name = "FullName";
+            FullName.ReadOnly = true;
+            // 
+            // Address
+            // 
+            Address.DataPropertyName = "Address";
+            Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            // 
+            // ContactNumber
+            // 
+            ContactNumber.DataPropertyName = "ContactNumber";
+            ContactNumber.HeaderText = "Contact";
+            ContactNumber.MinimumWidth = 6;
+            ContactNumber.Name = "ContactNumber";
+            ContactNumber.ReadOnly = true;
+            // 
+            // Email
+            // 
+            Email.DataPropertyName = "Email";
+            Email.HeaderText = "Email";
+            Email.MinimumWidth = 6;
+            Email.Name = "Email";
+            Email.ReadOnly = true;
+            // 
+            // Balance
+            // 
+            Balance.DataPropertyName = "Balance";
+            Balance.HeaderText = "Balance";
+            Balance.MinimumWidth = 6;
+            Balance.Name = "Balance";
+            Balance.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(14F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1016, 573);
+            ClientSize = new Size(1474, 573);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(btnLogout);
@@ -171,6 +192,7 @@
             Name = "CustomerListForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System v1.0 – Login (K.C.S)";
+            Load += CustomerListForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -180,16 +202,17 @@
 
         private Label lblTitle;
         private DataGridView dgvCustomers;
+        private Button btnAdd;
+        private Button btnDelete;
+        private Button btnLogout;
+        private TextBox txtSearch;
+        private Button btnSearch;
         private DataGridViewTextBoxColumn CustomerID;
         private DataGridViewTextBoxColumn FullName;
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn ContactNumber;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Balance;
-        private Button btnAdd;
-        private Button btnDelete;
-        private Button btnLogout;
-        private TextBox txtSearch;
-        private Button btnSearch;
+        private DataGridViewTextBoxColumn Status;
     }
 }
