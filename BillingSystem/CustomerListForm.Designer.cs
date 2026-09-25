@@ -30,11 +30,6 @@
         {
             lblTitle = new Label();
             dgvCustomers = new DataGridView();
-            btnAdd = new Button();
-            btnDelete = new Button();
-            btnLogout = new Button();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
             CustomerID = new DataGridViewTextBoxColumn();
             FullName = new DataGridViewTextBoxColumn();
             Address = new DataGridViewTextBoxColumn();
@@ -42,6 +37,11 @@
             Email = new DataGridViewTextBoxColumn();
             Balance = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            btnLogout = new Button();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             SuspendLayout();
             // 
@@ -70,54 +70,6 @@
             dgvCustomers.Size = new Size(1315, 268);
             dgvCustomers.TabIndex = 1;
             dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(308, 461);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(239, 47);
-            btnAdd.TabIndex = 2;
-            btnAdd.Text = "Add Customer";
-            btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Location = new Point(596, 461);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(157, 47);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
-            // 
-            // btnLogout
-            // 
-            btnLogout.Location = new Point(822, 461);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(159, 47);
-            btnLogout.TabIndex = 4;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(406, 60);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(767, 39);
-            txtSearch.TabIndex = 5;
-            txtSearch.TextChanged += txtSearch_TextChanged;
-            txtSearch.KeyPress += txtSearch_KeyPress;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Location = new Point(1190, 56);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(131, 43);
-            btnSearch.TabIndex = 6;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
             // 
             // CustomerID
             // 
@@ -174,6 +126,55 @@
             Status.MinimumWidth = 6;
             Status.Name = "Status";
             Status.ReadOnly = true;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(308, 461);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(239, 47);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Add Customer";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click_1;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(596, 461);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(157, 47);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(822, 461);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(159, 47);
+            btnLogout.TabIndex = 4;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(406, 60);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(767, 39);
+            txtSearch.TabIndex = 5;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            txtSearch.KeyPress += txtSearch_KeyPress;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(1190, 56);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(131, 43);
+            btnSearch.TabIndex = 6;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // CustomerListForm
             // 

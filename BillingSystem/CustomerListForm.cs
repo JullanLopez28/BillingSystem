@@ -181,6 +181,13 @@ namespace BillingSystem
             }
         }
 
-        
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            AddCustomerForm addCustomerForm = new AddCustomerForm();
+            addCustomerForm.ShowDialog();
+            // LoadCustomers();   // enable this line in Step 4.4
+
+
+        }
     }
 }
