@@ -69,7 +69,8 @@
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCustomers.Size = new Size(1315, 268);
             dgvCustomers.TabIndex = 1;
-            dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
+            dgvCustomers.CellDoubleClick += dgvCustomers_CellDoubleClick;
+            dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
             // 
             // CustomerID
             // 
