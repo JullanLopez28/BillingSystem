@@ -41,6 +41,9 @@
             btnLogout = new Button();
             txtSearch = new TextBox();
             btnSearch = new Button();
+            btnAnalytics = new Button();
+            btnExportExcel = new Button();
+            btnExportPdf = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             SuspendLayout();
             // 
@@ -114,9 +117,9 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(135, 470);
+            btnAdd.Location = new Point(28, 470);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(239, 47);
+            btnAdd.Size = new Size(175, 47);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Add Customer";
             btnAdd.UseVisualStyleBackColor = true;
@@ -124,9 +127,9 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(446, 470);
+            btnDelete.Location = new Point(229, 470);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(157, 47);
+            btnDelete.Size = new Size(110, 47);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -134,9 +137,9 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(699, 470);
+            btnLogout.Location = new Point(363, 470);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(159, 47);
+            btnLogout.Size = new Size(119, 47);
             btnLogout.TabIndex = 4;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
@@ -160,11 +163,44 @@
             btnSearch.Click += btnSearch_Click;
             btnSearch.KeyPress += txtSearch_KeyPress;
             // 
+            // btnAnalytics
+            // 
+            btnAnalytics.Location = new Point(501, 470);
+            btnAnalytics.Name = "btnAnalytics";
+            btnAnalytics.Size = new Size(130, 47);
+            btnAnalytics.TabIndex = 7;
+            btnAnalytics.Text = "Analytics";
+            btnAnalytics.UseVisualStyleBackColor = true;
+            btnAnalytics.Click += btnAnalytics_Click;
+            // 
+            // btnExportExcel
+            // 
+            btnExportExcel.Location = new Point(651, 470);
+            btnExportExcel.Name = "btnExportExcel";
+            btnExportExcel.Size = new Size(158, 47);
+            btnExportExcel.TabIndex = 8;
+            btnExportExcel.Text = "Export to Excel";
+            btnExportExcel.UseVisualStyleBackColor = true;
+            btnExportExcel.Click += btnExportExcel_Click;
+            // 
+            // btnExportPdf
+            // 
+            btnExportPdf.Location = new Point(827, 470);
+            btnExportPdf.Name = "btnExportPdf";
+            btnExportPdf.Size = new Size(158, 47);
+            btnExportPdf.TabIndex = 9;
+            btnExportPdf.Text = "Export to PDF";
+            btnExportPdf.UseVisualStyleBackColor = true;
+            btnExportPdf.Click += btnExportPdf_Click;
+            // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1016, 573);
+            Controls.Add(btnExportPdf);
+            Controls.Add(btnExportExcel);
+            Controls.Add(btnAnalytics);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(btnLogout);
@@ -198,5 +234,8 @@
         private Button btnLogout;
         private TextBox txtSearch;
         private Button btnSearch;
+        private Button btnAnalytics;
+        private Button btnExportExcel;
+        private Button btnExportPdf;
     }
 }
