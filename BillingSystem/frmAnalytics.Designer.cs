@@ -168,7 +168,9 @@
             Controls.Add(lblTotalRevenue);
             Controls.Add(lblTotalCustomers);
             Controls.Add(lblTitle);
+            MaximizeBox = false;
             Name = "frmAnalytics";
+            SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System - Analytics Dashboard";
             Load += frmAnalytics_Load;
