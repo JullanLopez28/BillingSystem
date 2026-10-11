@@ -216,5 +216,10 @@ namespace BillingSystem
         {
             this.Close();
         }
+
+        private void lblTotalCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

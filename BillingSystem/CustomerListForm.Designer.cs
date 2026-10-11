@@ -182,7 +182,7 @@
             // 
             // btnAnalytics
             // 
-            btnAnalytics.Location = new Point(1087, 444);
+            btnAnalytics.Location = new Point(1067, 444);
             btnAnalytics.Name = "btnAnalytics";
             btnAnalytics.Size = new Size(159, 47);
             btnAnalytics.TabIndex = 7;

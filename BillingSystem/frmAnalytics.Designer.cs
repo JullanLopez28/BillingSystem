@@ -50,7 +50,7 @@
             // 
             lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblTitle.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(359, 24);
+            lblTitle.Location = new Point(387, 19);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(250, 29);
             lblTitle.TabIndex = 0;
@@ -62,20 +62,23 @@
             // 
             lblTotalCustomers.Anchor = AnchorStyles.Top;
             lblTotalCustomers.AutoSize = true;
+            lblTotalCustomers.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalCustomers.Location = new Point(177, 67);
             lblTotalCustomers.Name = "lblTotalCustomers";
-            lblTotalCustomers.Size = new Size(130, 20);
+            lblTotalCustomers.Size = new Size(140, 20);
             lblTotalCustomers.TabIndex = 1;
             lblTotalCustomers.Text = "Total Customers: 0";
             lblTotalCustomers.TextAlign = ContentAlignment.MiddleCenter;
+            lblTotalCustomers.Click += lblTotalCustomers_Click;
             // 
             // lblTotalRevenue
             // 
             lblTotalRevenue.Anchor = AnchorStyles.Top;
             lblTotalRevenue.AutoSize = true;
+            lblTotalRevenue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalRevenue.Location = new Point(410, 67);
             lblTotalRevenue.Name = "lblTotalRevenue";
-            lblTotalRevenue.Size = new Size(145, 20);
+            lblTotalRevenue.Size = new Size(157, 20);
             lblTotalRevenue.TabIndex = 2;
             lblTotalRevenue.Text = "Total Revenue: ₱0.00";
             lblTotalRevenue.TextAlign = ContentAlignment.MiddleCenter;
@@ -84,9 +87,10 @@
             // 
             lblTotalUnpaid.Anchor = AnchorStyles.Top;
             lblTotalUnpaid.AutoSize = true;
+            lblTotalUnpaid.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalUnpaid.Location = new Point(648, 67);
             lblTotalUnpaid.Name = "lblTotalUnpaid";
-            lblTotalUnpaid.Size = new Size(137, 20);
+            lblTotalUnpaid.Size = new Size(147, 20);
             lblTotalUnpaid.TabIndex = 3;
             lblTotalUnpaid.Text = "Total Unpaid: ₱0.00";
             lblTotalUnpaid.TextAlign = ContentAlignment.MiddleCenter;
@@ -110,17 +114,17 @@
             // lblTop5Title
             // 
             lblTop5Title.AutoSize = true;
-            lblTop5Title.Font = new Font("Microsoft Sans Serif", 10F);
+            lblTop5Title.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTop5Title.Location = new Point(63, 382);
             lblTop5Title.Name = "lblTop5Title";
-            lblTop5Title.Size = new Size(263, 20);
+            lblTop5Title.Size = new Size(293, 20);
             lblTop5Title.TabIndex = 6;
             lblTop5Title.Text = "Top 5 Customers by Consumption";
             // 
             // dgvTop5
             // 
             dgvTop5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvTop5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTop5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvTop5.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvTop5.BackgroundColor = SystemColors.ControlLightLight;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -146,26 +150,27 @@
             dgvTop5.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvTop5.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvTop5.Size = new Size(855, 65);
+            dgvTop5.Size = new Size(855, 79);
             dgvTop5.TabIndex = 7;
             dgvTop5.CellContentClick += dgvTop5_CellContentClick;
             // 
             // FullName
             // 
-            FullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            FullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             FullName.HeaderText = "FullName";
             FullName.MinimumWidth = 6;
             FullName.Name = "FullName";
-            FullName.Width = 267;
             // 
             // TotalConsumption
             // 
+            TotalConsumption.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             TotalConsumption.HeaderText = "TotalConsumption";
             TotalConsumption.MinimumWidth = 6;
             TotalConsumption.Name = "TotalConsumption";
             // 
             // TotalBilled
             // 
+            TotalBilled.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             TotalBilled.HeaderText = "TotalBilled";
             TotalBilled.MinimumWidth = 6;
             TotalBilled.Name = "TotalBilled";
@@ -173,9 +178,9 @@
             // btnCloseAnalysis
             // 
             btnCloseAnalysis.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCloseAnalysis.Location = new Point(876, 562);
+            btnCloseAnalysis.Location = new Point(802, 542);
             btnCloseAnalysis.Name = "btnCloseAnalysis";
-            btnCloseAnalysis.Size = new Size(94, 29);
+            btnCloseAnalysis.Size = new Size(116, 34);
             btnCloseAnalysis.TabIndex = 8;
             btnCloseAnalysis.Text = "Close";
             btnCloseAnalysis.UseVisualStyleBackColor = true;
@@ -198,7 +203,6 @@
             Name = "frmAnalytics";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Billing System - Analytics Dashboard";
-            WindowState = FormWindowState.Maximized;
             Load += frmAnalytics_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTop5).EndInit();
             ResumeLayout(false);
