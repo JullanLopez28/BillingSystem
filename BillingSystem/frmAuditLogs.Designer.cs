@@ -93,17 +93,19 @@
             // 
             // dgvAuditLogs
             // 
+            dgvAuditLogs.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvAuditLogs.BackgroundColor = SystemColors.ButtonHighlight;
             dgvAuditLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAuditLogs.Location = new Point(57, 160);
+            dgvAuditLogs.Location = new Point(33, 143);
             dgvAuditLogs.Name = "dgvAuditLogs";
             dgvAuditLogs.RowHeadersWidth = 51;
-            dgvAuditLogs.Size = new Size(743, 241);
+            dgvAuditLogs.Size = new Size(787, 271);
             dgvAuditLogs.TabIndex = 6;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(57, 428);
+            btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnClose.Location = new Point(726, 452);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 7;
