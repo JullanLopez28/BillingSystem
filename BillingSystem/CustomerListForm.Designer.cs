@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblTitle = new Label();
             dgvCustomers = new DataGridView();
             CustomerID = new DataGridViewTextBoxColumn();
@@ -45,7 +46,15 @@
             btnAnalytics = new Button();
             btnExportExcel = new Button();
             btnExportPdf = new Button();
+            btnAuditLog = new Button();
+            btnManagePermissions = new Button();
+            statusStrip1 = new StatusStrip();
+            lblStatusUser = new ToolStripStatusLabel();
+            lblStatusSep = new ToolStripStatusLabel();
+            lblStatusTime = new ToolStripStatusLabel();
+            statusTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitle
@@ -72,7 +81,9 @@
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCustomers.Size = new Size(1315, 268);
             dgvCustomers.TabIndex = 1;
+            dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
             dgvCustomers.CellDoubleClick += dgvCustomers_CellDoubleClick;
+            dgvCustomers.CellFormatting += dgvCustomers_CellFormatting;
             dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
             // 
             // CustomerID
@@ -135,7 +146,7 @@
             // 
             btnAdd.Location = new Point(205, 444);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(239, 47);
+            btnAdd.Size = new Size(199, 47);
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Add Customer";
             btnAdd.UseVisualStyleBackColor = true;
@@ -143,9 +154,9 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(556, 444);
+            btnDelete.Location = new Point(466, 444);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(157, 47);
+            btnDelete.Size = new Size(199, 47);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -153,9 +164,9 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(817, 444);
+            btnLogout.Location = new Point(724, 444);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(159, 47);
+            btnLogout.Size = new Size(199, 47);
             btnLogout.TabIndex = 4;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
@@ -182,9 +193,9 @@
             // 
             // btnAnalytics
             // 
-            btnAnalytics.Location = new Point(1067, 444);
+            btnAnalytics.Location = new Point(974, 444);
             btnAnalytics.Name = "btnAnalytics";
-            btnAnalytics.Size = new Size(159, 47);
+            btnAnalytics.Size = new Size(259, 47);
             btnAnalytics.TabIndex = 7;
             btnAnalytics.Text = "Analytics";
             btnAnalytics.UseVisualStyleBackColor = true;
@@ -192,9 +203,9 @@
             // 
             // btnExportExcel
             // 
-            btnExportExcel.Location = new Point(531, 514);
+            btnExportExcel.Location = new Point(205, 514);
             btnExportExcel.Name = "btnExportExcel";
-            btnExportExcel.Size = new Size(205, 47);
+            btnExportExcel.Size = new Size(199, 47);
             btnExportExcel.TabIndex = 8;
             btnExportExcel.Text = "Export to Excel";
             btnExportExcel.UseVisualStyleBackColor = true;
@@ -202,19 +213,76 @@
             // 
             // btnExportPdf
             // 
-            btnExportPdf.Location = new Point(802, 514);
+            btnExportPdf.Location = new Point(466, 514);
             btnExportPdf.Name = "btnExportPdf";
-            btnExportPdf.Size = new Size(191, 47);
+            btnExportPdf.Size = new Size(199, 47);
             btnExportPdf.TabIndex = 9;
             btnExportPdf.Text = "Export To PDF";
             btnExportPdf.UseVisualStyleBackColor = true;
             btnExportPdf.Click += btnExportPdf_Click;
             // 
+            // btnAuditLog
+            // 
+            btnAuditLog.Location = new Point(724, 514);
+            btnAuditLog.Name = "btnAuditLog";
+            btnAuditLog.Size = new Size(199, 47);
+            btnAuditLog.TabIndex = 10;
+            btnAuditLog.Text = "Audit Log";
+            btnAuditLog.UseVisualStyleBackColor = true;
+            btnAuditLog.Click += btnAuditLog_Click;
+            // 
+            // btnManagePermissions
+            // 
+            btnManagePermissions.Location = new Point(974, 514);
+            btnManagePermissions.Name = "btnManagePermissions";
+            btnManagePermissions.Size = new Size(259, 47);
+            btnManagePermissions.TabIndex = 11;
+            btnManagePermissions.Text = "Manage Permissions";
+            btnManagePermissions.UseVisualStyleBackColor = true;
+            btnManagePermissions.Click += btnManagePermissions_Click;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatusUser, lblStatusSep, lblStatusTime });
+            statusStrip1.Location = new Point(0, 609);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1474, 26);
+            statusStrip1.TabIndex = 12;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // lblStatusUser
+            // 
+            lblStatusUser.Name = "lblStatusUser";
+            lblStatusUser.Size = new Size(253, 20);
+            lblStatusUser.Text = "Shows: User: [username] | Role: [role]";
+            // 
+            // lblStatusSep
+            // 
+            lblStatusSep.Name = "lblStatusSep";
+            lblStatusSep.Size = new Size(1063, 20);
+            lblStatusSep.Spring = true;
+            // 
+            // lblStatusTime
+            // 
+            lblStatusTime.Name = "lblStatusTime";
+            lblStatusTime.Size = new Size(104, 20);
+            lblStatusTime.Text = "Date and time";
+            // 
+            // statusTimer
+            // 
+            statusTimer.Enabled = true;
+            statusTimer.Interval = 1000;
+            statusTimer.Tick += statusTimer_Tick;
+            // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(14F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1474, 573);
+            ClientSize = new Size(1474, 635);
+            Controls.Add(statusStrip1);
+            Controls.Add(btnManagePermissions);
+            Controls.Add(btnAuditLog);
             Controls.Add(btnExportPdf);
             Controls.Add(btnExportExcel);
             Controls.Add(btnAnalytics);
@@ -232,8 +300,15 @@
             Text = "Billing System v1.0 – CustomerList (K.C.S)";
             Load += CustomerListForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void dgvCustomers_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -255,5 +330,12 @@
         private Button btnAnalytics;
         private Button btnExportExcel;
         private Button btnExportPdf;
+        private Button btnAuditLog;
+        private Button btnManagePermissions;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel lblStatusUser;
+        private ToolStripStatusLabel lblStatusSep;
+        private ToolStripStatusLabel lblStatusTime;
+        private System.Windows.Forms.Timer statusTimer;
     }
 }
