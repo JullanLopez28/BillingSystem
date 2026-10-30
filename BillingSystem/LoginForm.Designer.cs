@@ -52,7 +52,7 @@
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(44, 134);
+            lblPassword.Location = new Point(44, 150);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(73, 20);
             lblPassword.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(44, 84);
+            lblUsername.Location = new Point(44, 91);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(78, 20);
             lblUsername.TabIndex = 2;
@@ -69,14 +69,14 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(137, 84);
+            txtUsername.Location = new Point(137, 91);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(189, 27);
             txtUsername.TabIndex = 3;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(137, 131);
+            txtPassword.Location = new Point(137, 143);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(189, 27);
@@ -85,7 +85,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(90, 186);
+            btnLogin.Location = new Point(90, 208);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(94, 29);
             btnLogin.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(227, 186);
+            btnCancel.Location = new Point(232, 208);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(94, 29);
             btnCancel.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(398, 253);
+            ClientSize = new Size(404, 305);
             Controls.Add(btnCancel);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);

@@ -53,6 +53,8 @@
             lblStatusSep = new ToolStripStatusLabel();
             lblStatusTime = new ToolStripStatusLabel();
             statusTimer = new System.Windows.Forms.Timer(components);
+            btnChangePassword = new Button();
+            btnViewBilling = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -79,7 +81,7 @@
             dgvCustomers.ReadOnly = true;
             dgvCustomers.RowHeadersWidth = 51;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomers.Size = new Size(1315, 268);
+            dgvCustomers.Size = new Size(1527, 268);
             dgvCustomers.TabIndex = 1;
             dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
             dgvCustomers.CellDoubleClick += dgvCustomers_CellDoubleClick;
@@ -176,14 +178,14 @@
             // 
             txtSearch.Location = new Point(406, 60);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(767, 39);
+            txtSearch.Size = new Size(1012, 39);
             txtSearch.TabIndex = 5;
             txtSearch.TextChanged += txtSearch_TextChanged;
             txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1190, 56);
+            btnSearch.Location = new Point(1460, 57);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(131, 43);
             btnSearch.TabIndex = 6;
@@ -247,7 +249,7 @@
             statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatusUser, lblStatusSep, lblStatusTime });
             statusStrip1.Location = new Point(0, 609);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1474, 26);
+            statusStrip1.Size = new Size(1681, 26);
             statusStrip1.TabIndex = 12;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -260,7 +262,7 @@
             // lblStatusSep
             // 
             lblStatusSep.Name = "lblStatusSep";
-            lblStatusSep.Size = new Size(1063, 20);
+            lblStatusSep.Size = new Size(1309, 20);
             lblStatusSep.Spring = true;
             // 
             // lblStatusTime
@@ -275,11 +277,33 @@
             statusTimer.Interval = 1000;
             statusTimer.Tick += statusTimer_Tick;
             // 
+            // btnChangePassword
+            // 
+            btnChangePassword.Location = new Point(1268, 444);
+            btnChangePassword.Name = "btnChangePassword";
+            btnChangePassword.Size = new Size(223, 47);
+            btnChangePassword.TabIndex = 13;
+            btnChangePassword.Text = "Change Password";
+            btnChangePassword.UseVisualStyleBackColor = true;
+            btnChangePassword.Click += btnChangePassword_Click;
+            // 
+            // btnViewBilling
+            // 
+            btnViewBilling.Location = new Point(1268, 514);
+            btnViewBilling.Name = "btnViewBilling";
+            btnViewBilling.Size = new Size(223, 47);
+            btnViewBilling.TabIndex = 14;
+            btnViewBilling.Text = "View Billing";
+            btnViewBilling.UseVisualStyleBackColor = true;
+            btnViewBilling.Click += btnViewBilling_Click;
+            // 
             // CustomerListForm
             // 
             AutoScaleDimensions = new SizeF(14F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1474, 635);
+            ClientSize = new Size(1681, 635);
+            Controls.Add(btnViewBilling);
+            Controls.Add(btnChangePassword);
             Controls.Add(statusStrip1);
             Controls.Add(btnManagePermissions);
             Controls.Add(btnAuditLog);
@@ -337,5 +361,7 @@
         private ToolStripStatusLabel lblStatusSep;
         private ToolStripStatusLabel lblStatusTime;
         private System.Windows.Forms.Timer statusTimer;
+        private Button btnChangePassword;
+        private Button btnViewBilling;
     }
 }

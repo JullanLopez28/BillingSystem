@@ -234,6 +234,9 @@ namespace BillingSystem
 
                         dgvCustomers.DataSource = dt;
 
+                        dgvCustomers.ClearSelection();
+                        dgvCustomers.CurrentCell = null;
+
                         // Format columns
                         if (dgvCustomers.Columns.Count > 0)
                         {
@@ -275,6 +278,12 @@ namespace BillingSystem
             LoadCustomers();
             ApplyPermissions();
             InitStatusStrip();
+
+            BeginInvoke(new Action(() =>
+            {
+                dgvCustomers.ClearSelection();
+                dgvCustomers.CurrentCell = null;
+            }));
         }
         private void InitStatusStrip()
         {
@@ -328,6 +337,10 @@ namespace BillingSystem
                             adapter.Fill(dt);
 
                             dgvCustomers.DataSource = dt;
+
+                            dgvCustomers.ClearSelection();
+                            dgvCustomers.CurrentCell = null;
+
 
                             lblTitle.Text = $"Customer List ({dt.Rows.Count} result(s))";
                         }
@@ -668,5 +681,50 @@ namespace BillingSystem
             }
         }
 
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            using (frmChangePassword form = new frmChangePassword())
+            {
+                form.ShowDialog(this);
+            }
+        }
+
+        private void btnViewBilling_Click(object sender, EventArgs e)
+        {
+            if (dgvCustomers.CurrentRow == null)
+            {
+                MessageBox.Show(
+                    "Please select a customer first.",
+                    "No Customer Selected",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (dgvCustomers.CurrentRow.IsNewRow)
+            {
+                MessageBox.Show("Please select a valid customer.");
+                return;
+            }
+
+            object customerIdValue =
+                dgvCustomers.CurrentRow.Cells["CustomerID"].Value;
+
+            if (customerIdValue == null ||
+                customerIdValue == DBNull.Value)
+            {
+                MessageBox.Show("Unable to identify the selected customer.");
+                return;
+            }
+
+            int selectedCustomerId = Convert.ToInt32(customerIdValue);
+
+            using (frmBillingHistory billingForm =
+       new frmBillingHistory(selectedCustomerId))
+            {
+                billingForm.ShowDialog(this);
+            }
+        }
     }
 }
