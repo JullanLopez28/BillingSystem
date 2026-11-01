@@ -566,6 +566,10 @@ namespace BillingSystem
             btnAuditLog.ForeColor = Color.White;
             btnManagePermissions.BackColor = AppTheme.DangerColor;
             btnManagePermissions.ForeColor = Color.White;
+            btnChangePassword.BackColor = AppTheme.SecondaryColor;
+            btnChangePassword.ForeColor = Color.White;
+            btnViewBilling.BackColor = AppTheme.PrimaryColor;
+            btnViewBilling.ForeColor = Color.White;
 
             // DataGridView header colors
             dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor = AppTheme.PrimaryColor;
@@ -599,6 +603,41 @@ namespace BillingSystem
                 // Only the Status cell turns light green, so the
                 // alternating row colors stay visible
                 e.CellStyle.BackColor = AppTheme.ActiveRowColor;
+            }
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            using (var changeForm = new frmChangePassword())
+            {
+                changeForm.ShowDialog(this);
+            }
+        }
+
+        private void dgvCustomers_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            // Start with no customer selected so the user must choose one
+            dgvCustomers.ClearSelection();
+        }
+
+        private void btnViewBilling_Click(object sender, EventArgs e)
+        {
+            // POPUP 1: no customer selected -> do NOT open the form
+            if (dgvCustomers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer first, then click View Billing.",
+                    "No Customer Selected", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
+
+            // Read the CustomerID of the selected row (never the name)
+            int customerId = Convert.ToInt32(
+                dgvCustomers.SelectedRows[0].Cells["CustomerID"].Value);
+
+            using (var billingForm = new frmBillingHistory(customerId))
+            {
+                billingForm.ShowDialog(this);
             }
         }
     }
