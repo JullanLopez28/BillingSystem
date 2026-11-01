@@ -47,6 +47,7 @@
             // dgvBilling
             // 
             dgvBilling.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvBilling.BackgroundColor = SystemColors.ControlLightLight;
             dgvBilling.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBilling.Location = new Point(32, 55);
             dgvBilling.Name = "dgvBilling";
